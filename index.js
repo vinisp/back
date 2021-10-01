@@ -4,7 +4,7 @@ const posts = require('./posts/posts.json')
 const port = process.env.PORT || 3000;
 
 http.createServer((req,res) => {
-    res.setHeader("Access-Control-Allow-Origin", "http://depp4.herokuapp.com/" )
+    res.writeHead(200, {"Access-Control-Allow-Origin": "http://depp4.herokuapp.com/"} )
     res.write(JSON.stringify(posts))
     res.end()
 }).listen(port, () => {
