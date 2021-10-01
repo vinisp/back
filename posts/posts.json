@@ -1,6 +1,7 @@
 {
     "posts": [
         {
+        "id": 0,
         "title": "Hellow Words",
         "content": "My first post data"
         }
