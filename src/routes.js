@@ -11,6 +11,7 @@ routes.get("/", (req, res) => {
 routes.get("/users", UserControler.index);
 routes.post("/users", UserControler.store);
 
+routes.get("/users/:user_id/address", AddressControler.index);
 routes.post("/users/:user_id/address", AddressControler.store);
 
 module.exports = routes;
