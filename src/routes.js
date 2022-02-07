@@ -15,6 +15,7 @@ routes.patch("/users/:user_id/", UserControler.update);
 
 routes.get("/users/:user_id/address", AddressControler.index);
 routes.post("/users/:user_id/address", AddressControler.store);
+routes.patch("/users/:user_id/address/:address_id", AddressControler.update);
 
 routes.get("/users/:user_id/techs", TechController.index);
 routes.post("/users/:user_id/techs", TechController.store);

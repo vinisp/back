@@ -31,4 +31,29 @@ module.exports = {
 
     return res.json(address);
   },
+
+  async update(req, res) {
+    const { user_id, address_id } = req.params;
+    const numberAddressId = +address_id;
+    const { zipcode, street, number } = req.body;
+    const user = await User.findByPk(user_id, {
+      include: { association: "addresses" },
+    });
+
+    if (!user) {
+      return res.status(400).json({ error: "User not found" });
+    }
+
+    const listAllAddress = await user.addresses;
+
+    const selectAddress = listAllAddress.find((e) => e.id === numberAddressId);
+
+    selectAddress.zipcode = zipcode;
+    selectAddress.street = street;
+    selectAddress.number = number;
+
+    await selectAddress.save();
+
+    return res.json(selectAddress);
+  },
 };
