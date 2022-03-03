@@ -1,9 +1,9 @@
 module.exports = {
-  dialect: "postgres",
-  host: "castor.db.elephantsql.com",
-  username: "vfzmmeyk",
-  password: "OXnMa9RgDiuEFqXRgAI9mAVEczw7xqEz",
-  database: "vfzmmeyk",
+  dialect: process.env.DIALECT,
+  host: process.env.HOST,
+  username: process.env.DB_USERNAME,
+  password: process.env.PASSWORD,
+  database: process.env.DATABASE,
   define: {
     timestamps: true,
     underscored: true,

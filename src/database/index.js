@@ -1,4 +1,5 @@
 //Conexões com banco de dados
+
 const Sequelize = require("sequelize");
 const dbConfig = require("../config/database");
 
