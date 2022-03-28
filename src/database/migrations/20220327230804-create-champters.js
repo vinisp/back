@@ -2,7 +2,7 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("courses", {
+    await queryInterface.createTable("champters", {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -13,23 +13,11 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      champter_id: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       name: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      price: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      category: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      level: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      created_by: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -45,6 +33,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("courses");
+    await queryInterface.dropTable("champters");
   },
 };

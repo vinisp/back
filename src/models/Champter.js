@@ -1,15 +1,12 @@
 const { Model, DataTypes } = require("sequelize");
 
-class Course extends Model {
+class Champter extends Model {
   static init(sequelize) {
     super.init(
       {
         course_id: DataTypes.STRING,
+        champter_id: DataTypes.STRING,
         name: DataTypes.STRING,
-        price: DataTypes.STRING,
-        category: DataTypes.STRING,
-        level: DataTypes.STRING,
-        created_by: DataTypes.STRING,
       },
       {
         sequelize,
@@ -22,4 +19,4 @@ class Course extends Model {
   } */
 }
 
-module.exports = Course;
+module.exports = Champter;

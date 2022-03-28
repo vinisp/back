@@ -28,15 +28,35 @@ module.exports = {
     return res.json(users);
   }, */
 
-  async testeRoute(req, res) {
-    const { course_test } = req.body;
+  async saveCourse(req, res) {
+    const { course_id, name, price, category, level, created_by } = req.body;
+    //VERIFICAR SE O CURSO JÁ EXISTE
+    //VERIFICAR ID DO USUÁRIO QUE ESTÁ CRIANDO O CURSO,
 
-    return res.json(course_test);
+    const course = await Course.create({
+      course_id,
+      name,
+      price,
+      category,
+      level,
+      created_by,
+    });
+    return res.json(course);
   },
 
-  async saveCourse(req, res) {
-    const { name, price, category, level } = req.body;
-    const course = await Course.create({ name, price, category, level });
+  async loadCourse(req, res) {
+    const { course_id } = req.params;
+
+    const course = await Course.findAll({
+      where: {
+        course_id: course_id,
+      },
+    });
+
+    if (!course) {
+      return res.status(400).json({ error: "Course Not found" });
+    }
+
     return res.json(course);
   },
 };
