@@ -6,7 +6,8 @@ class Element extends Model {
       {
         course_id: DataTypes.STRING,
         champter_id: DataTypes.STRING,
-        name: DataTypes.STRING,
+        element_id: DataTypes.STRING,
+        element_type: DataTypes.STRING,
         content: DataTypes.STRING,
         order: DataTypes.INTEGER,
       },

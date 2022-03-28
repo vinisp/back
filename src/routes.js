@@ -19,6 +19,7 @@ routes.post("/course/save", CourseController.saveCourse);
 routes.get("/course/:course_id", CourseController.loadCourse);
 
 routes.post("/champter", ChampterController.storeChampter);
+routes.get("/champters", ChampterController.index);
 
 routes.post("/course/champter/element", ElementController.storeElement);
 

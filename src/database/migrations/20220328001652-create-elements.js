@@ -17,7 +17,11 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      name: {
+      element_id: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      element_type: {
         type: Sequelize.STRING,
         allowNull: false,
       },
