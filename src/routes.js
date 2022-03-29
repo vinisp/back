@@ -18,10 +18,15 @@ routes.post("/user/view/:user_id", UserControler.view);
 routes.post("/course/save", CourseController.saveCourse);
 routes.get("/course/:course_id", CourseController.loadCourse);
 routes.get("/search/:user_id", CourseController.getAllCourseCreatedByUsers);
+routes.delete("/course/delete/:course_id", CourseController.DeleteCourse);
 
 routes.post("/champter", ChampterController.storeChampter);
 routes.get("/champters", ChampterController.index);
+routes.delete("/champters/:course_id/:champter_id"); // Delete One
+routes.delete("/champters/delete/:course_id", ChampterController.DeleteCourse); //DeleteAll
 
 routes.post("/course/champter/element", ElementController.storeElement);
+routes.delete("/elements/:course_id"); //Delete One
+routes.delete("/elements/delete/:course_id", ElementController.DeleteCourse); //Delete All
 
 module.exports = routes;

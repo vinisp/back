@@ -35,4 +35,19 @@ module.exports = {
       return res.json(element);
     }
   },
+  async DeleteCourse(req, res) {
+    const { course_id } = req.params;
+
+    await Element.destroy({
+      where: {
+        course_id: course_id,
+      },
+    }).then((result) => {
+      if (result) {
+        res.json({ status: "item removido" });
+      } else {
+        res.json({ status: "não foi possível encontrar o curso" });
+      }
+    });
+  },
 };
