@@ -44,6 +44,18 @@ module.exports = {
     return res.json(course);
   },
 
+  async getAllCourseCreatedByUsers(req, res) {
+    const { user_id } = req.params;
+
+    const myCourses = await Course.findAll({
+      where: {
+        created_by: user_id,
+      },
+    });
+
+    return res.json(myCourses);
+  },
+
   async loadCourse(req, res) {
     const { course_id } = req.params;
 

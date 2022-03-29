@@ -17,6 +17,7 @@ routes.post("/user/view/:user_id", UserControler.view);
 
 routes.post("/course/save", CourseController.saveCourse);
 routes.get("/course/:course_id", CourseController.loadCourse);
+routes.get("/search/:user_id", CourseController.getAllCourseCreatedByUsers);
 
 routes.post("/champter", ChampterController.storeChampter);
 routes.get("/champters", ChampterController.index);
