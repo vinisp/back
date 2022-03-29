@@ -17,7 +17,6 @@ module.exports = {
     const checkChampter = await Champter.findAll({
       where: {
         course_id: course_id,
-        champter_id: champter_id,
       },
     });
 
