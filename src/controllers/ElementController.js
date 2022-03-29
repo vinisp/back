@@ -10,7 +10,6 @@ module.exports = {
       where: {
         course_id: course_id,
         champter_id: champter_id,
-        element_id: element_id,
       },
     });
 
