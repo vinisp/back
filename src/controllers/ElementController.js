@@ -8,6 +8,8 @@ module.exports = {
 
     const checkElement = await Element.findAll({
       where: {
+        course_id: course_id,
+        champter_id: champter_id,
         element_id: element_id,
       },
     });
