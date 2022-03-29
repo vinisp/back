@@ -16,13 +16,14 @@ module.exports = {
       const updateElement = await Element.update(
         {
           content: content,
+          order: order,
         },
         { where: { element_id: element_id } }
       );
       return res.json(updateElement);
     }
 
-    if (checkChampter.length === 0) {
+    if (checkElement.length === 0) {
       const element = await Element.create({
         course_id,
         champter_id,
