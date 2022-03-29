@@ -25,7 +25,7 @@ module.exports = {
         {
           name: name,
         },
-        { where: { champter_id: champter_id } }
+        { where: { champter_id: champter_id, course_id: course_id } }
       );
       return res.json(updateChampter);
     }

@@ -20,7 +20,13 @@ module.exports = {
           content: content,
           order: order,
         },
-        { where: { element_id: element_id } }
+        {
+          where: {
+            element_id: element_id,
+            course_id: course_id,
+            element_type: element_type,
+          },
+        }
       );
       return res.json(updateElement);
     }
