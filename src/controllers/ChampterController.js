@@ -1,4 +1,3 @@
-const { Op } = require("sequelize");
 const Champter = require("../models/Champter");
 
 module.exports = {
