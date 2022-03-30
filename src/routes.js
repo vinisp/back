@@ -22,10 +22,15 @@ routes.delete("/course/delete/:course_id", CourseController.DeleteCourse);
 
 routes.post("/champter", ChampterController.storeChampter);
 routes.get("/champters", ChampterController.index);
-routes.delete("/champters/:course_id/:champter_id"); // Delete One
+routes.get("/:course_id/champters", ChampterController.getAllChampters);
+routes.delete("/champters/:course_id/:champter_id"); // Get Elements From Champter
 routes.delete("/champters/delete/:course_id", ChampterController.DeleteCourse); //DeleteAll
 
 routes.post("/course/champter/element", ElementController.storeElement);
+routes.get(
+  "/elements/:course_id/:champter_id/get",
+  ElementController.getAllElements
+);
 routes.post("/course/champter/element/update", ElementController.UpdateElement);
 routes.delete(
   "/course/champter/element/delete/:item_id",

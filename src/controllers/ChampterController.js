@@ -6,8 +6,14 @@ module.exports = {
     return res.json(champters);
   },
 
-  async listById(req, res) {
-    const champters = await Champter.findAll();
+  async getAllChampters(req, res) {
+    const { course_id } = req.params;
+
+    const champters = await Champter.findAll({
+      where: {
+        course_id,
+      },
+    });
     return res.json(champters);
   },
 

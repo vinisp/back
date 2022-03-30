@@ -18,6 +18,18 @@ module.exports = {
     return res.json(element);
   },
 
+  async getAllElements(req, res) {
+    const { course_id, champter_id } = req.params;
+
+    const elements = await Element.findAll({
+      where: {
+        course_id,
+        champter_id,
+      },
+    });
+    return res.json(elements);
+  },
+
   async UpdateElement(req, res) {
     const { element_id, content, order } = req.body;
 
