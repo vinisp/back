@@ -26,6 +26,11 @@ routes.delete("/champters/:course_id/:champter_id"); // Delete One
 routes.delete("/champters/delete/:course_id", ChampterController.DeleteCourse); //DeleteAll
 
 routes.post("/course/champter/element", ElementController.storeElement);
+routes.post("/course/champter/element/update", ElementController.UpdateElement);
+routes.delete(
+  "/course/champter/element/delete/:item_id",
+  ElementController.DeleteElement
+);
 routes.delete("/elements/:course_id"); //Delete One
 routes.delete("/elements/delete/:course_id", ElementController.DeleteCourse); //Delete All
 
