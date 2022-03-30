@@ -20,6 +20,7 @@ module.exports = {
       element_id: {
         type: Sequelize.STRING,
         allowNull: false,
+        unique: true,
       },
       element_type: {
         type: Sequelize.STRING,
