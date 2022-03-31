@@ -21,10 +21,14 @@ routes.get("/search/:user_id", CourseController.getAllCourseCreatedByUsers);
 routes.delete("/course/delete/:course_id", CourseController.DeleteCourse);
 
 routes.post("/champter", ChampterController.storeChampter);
+routes.post("/champters/rename", ChampterController.RenameChampter);
 routes.get("/champters", ChampterController.index);
 routes.get("/:course_id/champters", ChampterController.getAllChampters);
-routes.delete("/champters/:course_id/:champter_id"); // Get Elements From Champter
-routes.delete("/champters/delete/:course_id", ChampterController.DeleteCourse); //DeleteAll
+routes.delete(
+  "/champters/:champter_id/delete",
+  ChampterController.DeleteChampter
+);
+routes.delete("/champters/delete/:course_id", ChampterController.DeleteCourse);
 
 routes.post("/course/champter/element", ElementController.storeElement);
 routes.get(
@@ -36,7 +40,10 @@ routes.delete(
   "/course/champter/element/delete/:item_id",
   ElementController.DeleteElement
 );
-routes.delete("/elements/:course_id"); //Delete One
-routes.delete("/elements/delete/:course_id", ElementController.DeleteCourse); //Delete All
+routes.delete(
+  "/elements/:champter_id/delete",
+  ElementController.DeleteChampterElements
+);
+routes.delete("/elements/delete/:course_id", ElementController.DeleteCourse);
 
 module.exports = routes;

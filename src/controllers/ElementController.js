@@ -63,6 +63,24 @@ module.exports = {
     });
   },
 
+  async DeleteChampterElements(req, res) {
+    const { champter_id } = req.params;
+
+    await Element.destroy({
+      where: {
+        champter_id: champter_id,
+      },
+    }).then((result) => {
+      if (result) {
+        res.json({ status: "todos os elementos do modúlo foram deletados" });
+      } else {
+        res.json({
+          status: "falhou, não foi possível deletar os items do módulo",
+        });
+      }
+    });
+  },
+
   async DeleteCourse(req, res) {
     const { course_id } = req.params;
 
