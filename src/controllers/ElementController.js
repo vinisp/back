@@ -4,18 +4,12 @@ module.exports = {
   async getAllElements(req, res) {},
 
   async storeElement(req, res) {
-    const element = await Element.bulkCreate(req.body, {
-      fields: [
-        "course_id",
-        "champter_id",
-        "element_id",
-        "element_type",
-        "content",
-        "order",
-      ],
-      ignoreDuplicates: true,
-    });
-    return res.json(element);
+    const userData = req.body;
+    Element.bulkCreate([userData], { ignoreDuplicates: true }).then(() =>
+      console.log("elemtos salvos com sucesso")
+    );
+    console.log(req.body);
+    return res.json(userData);
   },
 
   async getAllElements(req, res) {
@@ -45,6 +39,15 @@ module.exports = {
       }
     );
     return res.json(updateContentAndOrder);
+  },
+
+  async UpdateOrder(req, res) {
+    const userData = req.body;
+    Element.bulkCreate(userData, {
+      ignoreDuplicates: true,
+      updateOnDuplicate: ["order"],
+    }).then(() => console.log("elemtos Atualizados com sucesso"));
+    return res.json(userData);
   },
 
   async DeleteElement(req, res) {

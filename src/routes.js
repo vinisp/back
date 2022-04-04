@@ -36,6 +36,7 @@ routes.get(
   ElementController.getAllElements
 );
 routes.post("/course/champter/element/update", ElementController.UpdateElement);
+routes.post("/elements/updateorder", ElementController.UpdateOrder);
 routes.delete(
   "/course/champter/element/delete/:item_id",
   ElementController.DeleteElement
