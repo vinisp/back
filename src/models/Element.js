@@ -8,7 +8,7 @@ class Element extends Model {
         champter_id: DataTypes.STRING,
         element_id: DataTypes.STRING,
         element_type: DataTypes.STRING,
-        content: DataTypes.STRING,
+        content: DataTypes.TEXT,
         order: DataTypes.INTEGER,
       },
       {
