@@ -43,11 +43,25 @@ module.exports = {
 
   async UpdateOrder(req, res) {
     const userData = req.body;
-    Element.bulkCreate(userData, {
-      ignoreDuplicates: true,
-      updateOnDuplicate: ["order"],
-    }).then(() => console.log("elemtos Atualizados com sucesso"));
-    return res.json(userData);
+
+    const formatToQuery = JSON.stringify(userData, null, 2);
+
+    const newConsult = JSON.parse(formatToQuery);
+
+    const keys = Object.keys(newConsult);
+
+    const allContent = keys.map((e) => newConsult[e]);
+
+    allContent.map((e) =>
+      Element.update(
+        { order: e.order },
+        {
+          where: {
+            element_id: e.element_id,
+          },
+        }
+      )
+    );
   },
 
   async DeleteElement(req, res) {
