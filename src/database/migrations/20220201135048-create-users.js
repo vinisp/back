@@ -19,6 +19,27 @@ module.exports = {
         allowNull: false,
         unique: true,
       },
+      user_name: {
+        type: Sequelize.STRING,
+      },
+      resume: {
+        type: Sequelize.TEXT,
+      },
+      facebook_link: {
+        type: Sequelize.STRING,
+      },
+      instagram_link: {
+        type: Sequelize.STRING,
+      },
+      twitter_link: {
+        type: Sequelize.STRING,
+      },
+      telegram: {
+        type: Sequelize.STRING,
+      },
+      whatsapp: {
+        type: Sequelize.STRING,
+      },
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,

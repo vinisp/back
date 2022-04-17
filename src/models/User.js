@@ -6,6 +6,13 @@ class User extends Model {
       {
         idfirebase: DataTypes.STRING,
         email: DataTypes.STRING,
+        user_name: DataTypes.STRING,
+        resume: DataTypes.TEXT,
+        facebook_link: DataTypes.STRING,
+        instagram_link: DataTypes.STRING,
+        twitter_link: DataTypes.STRING,
+        telegram: DataTypes.STRING,
+        whatsapp: DataTypes.STRING,
       },
       {
         sequelize,

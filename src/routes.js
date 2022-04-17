@@ -14,6 +14,7 @@ routes.post("/users", UserControler.store);
 routes.patch("/users/:user_id/", UserControler.update);
 routes.get("/findUser/:user_id", UserControler.findUserByFirebaseID);
 routes.post("/user/view/:user_id", UserControler.view);
+routes.post("/user/update", UserControler.updateUserData);
 
 routes.post("/course/save", CourseController.saveCourse);
 routes.get("/course/:course_id", CourseController.loadCourse);
